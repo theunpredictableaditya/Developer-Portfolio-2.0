@@ -1,8 +1,13 @@
-
+// import CursorBlob from "./components/Blob/CursorBlob"
+import NavBar from "./components/NavBar/NavBar"
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+      <NavBar />
+      {/* Experimental Only */}
+      {/* <CursorBlob /> */}
+    </>
   )
 }
 
