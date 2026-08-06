@@ -1,14 +1,29 @@
 import './NavBar.scss'
-import { useRef, useState} from 'react'
+import { useContext, useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
-import { NavLists } from '../../constants.ts';
+
+// Constants Imports
+import { NavLists, NavIconNames } from '../../constants.ts';
+
+// SVG Imports 
 import arrowLink from '../../assets/arrowLink.svg';
+import NavIcon from './components/NavIcon.tsx';
+import gitIcon from '../../assets/github-icon.svg';
+
+import { type IconName } from './components/NavIcon.tsx';
+import { NavContext } from './nav.context.tsx';
 
 const NavBar = () => {
 
     //  Hooks
-    const [active, setActive] = useState<string>("Home");
+    const navContext = useContext(NavContext);
+
+    if (!navContext) {
+        throw new Error('NavBar must be used within NavProvider');
+    }
+
+    const { active, setActive } = navContext;
     const navRef = useRef(null);
     const listRef = useRef<(HTMLLIElement | null)[]>([]);
     const indicatorRef = useRef<HTMLDivElement | null>(null);
@@ -71,16 +86,22 @@ const NavBar = () => {
     <nav className="navbar" ref={navRef}>
         <h2>Aditya.</h2>
         <ul>
-            {NavLists.map((item, index) => (
+            {NavLists.map((item, index) => {
+            const currentIcon: IconName = NavIconNames[index]
+            return (
             <li 
             key={item}
             ref={(el) => {listRef.current[index] = el}}
             className={`${active === item ? "textWhite": ""}`}
             onClick={() => setActive(item)}
             >
-                {item}
+            <span>
+                {item}    
+            </span>
+
+            <NavIcon iconName={currentIcon} isActive={active === item} />
             </li>
-            ))}
+            )})}
 
             {/* Active Indicator */}
             <div ref={indicatorRef} className='active-indicator'/>
@@ -88,7 +109,8 @@ const NavBar = () => {
         <span ref={githubRef} onMouseMove={(e) => handleGithubMove(e)} onMouseLeave={handleGithubLeave} className='github-link'>
             <a href="https://github.com/theunpredictableaditya" target="_blank" rel="noopener noreferrer">
                 <span>Github</span>
-                <img src={arrowLink} alt="arrow-link" />
+                <img className="git-arrow" src={arrowLink} alt="arrow-link" />
+                <img src={gitIcon} alt="github-icon" className='git-icon'/>
             </a>
         </span>
     </nav>

@@ -2,10 +2,18 @@ html, body {
     margin: 0;
     padding: 16px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #fff;
     color: #000;
+}
+
+// Media Query
+@media (max-width: 780px) {
+    body {
+        padding: 4px;
+    }
 }

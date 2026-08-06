@@ -25,6 +25,9 @@ nav {
         list-style: none;
 
             li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 font-size: 1.2rem;
                 font-weight: 400;
                 padding: 0.5rem 1rem;
@@ -35,6 +38,14 @@ nav {
                 &:hover {
                     scale: 1.05;
                     transition: scale 0.3s ease-in-out;
+                }
+
+                span{
+                    background-color: transparent;
+                }
+
+                .navSvgContainer {
+                    display: none;
                 }
             }
 
@@ -82,6 +93,64 @@ nav {
             display: flex;
             align-items: center;
             // gap: 0.5rem;
+        }
+
+        .git-icon {
+            display: none;
+        }
+    }
+}
+
+
+
+// Media Query
+@media (max-width: 780px) {
+    nav{
+        padding: 0.5rem;
+        border-radius: 34px;
+
+        h2 {
+            font-size: 0.8rem;
+        }
+
+        ul {
+            justify-content: center;
+            gap: 0.5rem;
+            li {
+                font-size: 0.5rem;
+                padding: 0.1rem;
+                span {
+                    display: none;
+                }
+
+                .navSvgContainer{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg {
+                        width: 14px;
+                        stroke-width: 2px;
+                    }
+                }
+            }
+        }
+
+        .github-link{
+            a {
+                span {
+                    display: none;
+                }
+
+                .git-arrow {
+                    display: none;
+                }
+
+                .git-icon {
+                    width: 16px;
+                    display: block;
+                }
+            }
         }
     }
 }
