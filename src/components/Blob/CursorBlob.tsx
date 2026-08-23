@@ -24,7 +24,9 @@ const CursorBlob = () => {
     });
   }, []);
 
-  return <div className="cursor-blob"></div>;
+  return <div className="cursor-blob">
+    <div className="black-dot"></div>
+  </div>;
 };
 
 export default CursorBlob;
