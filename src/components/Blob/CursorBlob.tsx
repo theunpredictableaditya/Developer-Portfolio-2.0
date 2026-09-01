@@ -25,7 +25,6 @@ const CursorBlob = () => {
   }, []);
 
   return <div className="cursor-blob">
-    <div className="black-dot"></div>
   </div>;
 };
 

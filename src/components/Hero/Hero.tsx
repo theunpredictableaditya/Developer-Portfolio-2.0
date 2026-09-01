@@ -1,15 +1,27 @@
+import { useState } from "react"
 import Signature from "./components/Signature"
 import "./Hero.scss"
 import schedule from '../../assets/schedule.svg'
 import devImage from '../../assets/aditya.png'
 
 const Hero = () => {
+
+  const [showSignature, setShowSignature] = useState<boolean>(true)
+  const [showActualHero, setShowActualHero] = useState<boolean>(false)
+
+  setTimeout(() => {
+    setShowSignature(false)
+    setShowActualHero(true)
+  }, 2750)
+
   return (
     <section id="hero">
-        {/* <div id="preSignature">
+        {showSignature && <div id="preSignature">
           <Signature width={"100%"}/>
-        </div> */}
-        <div id="actual-hero">
+        </div>}
+
+
+        {showActualHero && <div id="actual-hero">
           <div className="left">
             <div className="intro">
               <h1 className="black">IT'S ME</h1>
@@ -17,7 +29,7 @@ const Hero = () => {
             </div>
 
             <div className="description">
-              A passionate UI/UX and Web Designer. I create clean, <br/> user-friendly designs that helps buisnesses connect <br /> with their audience. Let's build something great <br />together!
+              A passionate UI/UX and Web Designer. I create clean, user-friendly designs that helps buisnesses connect with their audience. Let's build something great together!
             </div>
 
             <div className="completions">
@@ -41,7 +53,7 @@ const Hero = () => {
               </span>
               </button>
           </div>
-        </div>
+        </div>}
     </section>
   )
 }

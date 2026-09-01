@@ -5,10 +5,6 @@
   width: 300px;
   height: 300px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   pointer-events: none;
   z-index: 999;
 
@@ -24,12 +20,4 @@
   mix-blend-mode: screen;
 
   transform: translate(-50%, -50%);
-
-  .black-dot {
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    border-radius: 50%;
-    z-index: 1000;
-  }
 }
