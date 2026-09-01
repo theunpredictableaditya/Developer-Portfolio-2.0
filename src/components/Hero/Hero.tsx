@@ -3,6 +3,7 @@ import Signature from "./components/Signature"
 import "./Hero.scss"
 import schedule from '../../assets/schedule.svg'
 import devImage from '../../assets/aditya.png'
+import currentProjectImage from '../../assets/this-project.png'
 
 const Hero = () => {
 
@@ -45,6 +46,7 @@ const Hero = () => {
           </div>
 
           <div className="right">
+            <img src={currentProjectImage} alt="current-project-image" className="only-vertical-visible" />
             <img src={devImage} alt="" className="devs-image" />
             <button className="schedule-button">
               <img src={schedule} alt="schedule-icon" />

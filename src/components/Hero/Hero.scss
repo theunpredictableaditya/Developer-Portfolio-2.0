@@ -93,6 +93,10 @@
                 z-index: -1;
             }
 
+            .only-vertical-visible {
+                display: none;
+            }
+
             .schedule-button {
                 margin-right: 2vw;
                 padding: 1rem 1.5rem;
@@ -107,6 +111,149 @@
                     font-size: medium;
                     font-weight: 600;
                     color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+// media query for those devices whose width are lesser than 500px
+@media screen and (max-width: 500px){
+    #hero{
+        #actual-hero {
+            flex-direction: column;
+
+            .left {
+                width: 100%;
+                align-items: center;
+                gap: 8vw;
+                padding: 0;
+
+                .intro {
+                    h1 {
+                        text-align: center;
+                        font-size: 10vw;
+                    }
+                }
+
+                .description {
+                    width: 70vw;
+                    font-size: 4vw;
+                    text-align: center;
+                }
+
+                .completions {
+                    .projects-done {
+                        .numbers {
+                            text-align: center;
+                            font-size: 7vw;
+                        }
+
+                        span {
+                            font-size: 5vw;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 100%;
+                padding: 0;
+                align-items: center;
+
+                .devs-image {
+                    display: none;
+                }
+
+                .only-vertical-visible{
+                    display: block;
+                    width: 100%;
+                    border-bottom: 4px solid #d4d4d46b; 
+                }
+
+                .schedule-button {
+                    padding: 0.75rem 1rem;
+                    border-bottom: 4px solid #d4d4d46b; 
+  
+  /* Soft white ambient lift */
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.9), 
+              0 4px 6px rgba(0, 0, 0, 0.05); 
+
+                    span {
+                        font-size: small;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media query for those devices whose width are lesser than 1200px
+@media screen and (500px <= width <=1200px){
+    #hero {
+        #actual-hero {
+            flex-direction: column;
+
+            .left {
+                width: 100%;
+                align-items: center;
+                gap: 1vw;
+                padding: 0;
+
+                .intro {
+                    h1 {
+                        text-align: center;
+                        font-size: 7vw;
+                    }
+                }
+
+                .description {
+                    width: 60vw;
+                    text-align: center;
+                }
+
+                .completions {
+                    .projects-done {
+                        .numbers {
+                            text-align: center;
+                            font-size: 4vw;
+                        }
+
+                        span {
+                            font-size: 2vw;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 100%;
+                padding: 0;
+                align-items: center;
+
+                .devs-image {
+                    display: none;
+                }
+
+                .only-vertical-visible{
+                    display: block;
+                    width: 60%;
+                    border-bottom: 4px solid #d4d4d46b;
+                }
+
+                .schedule-button {
+                    padding: 0.75rem 1rem;
+                    border-bottom: 4px solid #d4d4d46b;
+
+                    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.9), 
+              0 4px 6px rgba(0, 0, 0, 0.05); 
+
+                    span {
+                        font-size: small;
+                        font-weight: 500;
+                    }
                 }
             }
         }
